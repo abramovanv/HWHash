@@ -35,11 +35,12 @@ public class Main {
             System.out.println("Введите вес (кг):");
             int weght = Integer.parseInt(scanner.nextLine());
 
+            Address forcheck = new Address(country, city);
 
-            if (costPerAddress.get(new Address(country, city)) == null) {
+            if (costPerAddress.get(forcheck) == null) {
                 System.out.println("Доставки по этому адресу нет");
             } else {
-                int priceDeliv = costPerAddress.get(new Address(country, city)) * weght;
+                int priceDeliv = costPerAddress.get(forcheck) * weght;
                 allPrice += priceDeliv;
                 ss.add(country);
                 System.out.println("Стоимость доставки составит: " + priceDeliv);
